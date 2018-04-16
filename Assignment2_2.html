@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Assignment #2</title>
+    <style>
+    body {
+      text-align: center;
+      font-size: 16px;
+    }
+    </style>
+  </head>
+  <body>
+    <h3>Assignment #2-2 :Text Animation</h3>
+    <canvas id="mycanvas" width="800" height="600" style="border :1px solid"></canvas>
+    <br><br>
+    Message String : <input id="textSt" value="Javascript">
+    Time delay : <input id="Tdele" value="100">
+    millisecond .<button onclick="start()">Play Animetion</button>
+    <button onclick="stop()">Stop Animetion</button>
+    <script type="text/javascript">
+    var ctx = document.getElementById("mycanvas").getContext("2d");
+    var timeIntervel=null;
+    var A;
+    var X;
+    var Y;
+    var speedX=2;
+    var speedY=2;
+    var fps=0;
+
+    function start(){
+      if(timeIntervel==null)
+      {
+        X=400;Y=300;
+        clearInterval(timeIntervel);
+        ctx.clearRect(0,0,800,600);
+        ctx.font ="16px Tahoma";
+        fps = parseInt(document.getElementById("Tdele").value);
+        A = document.getElementById("textSt").value;
+        timeIntervel = setInterval( update ,1000/fps);
+      }
+      else{alert("Intravel is runing")}
+
+      }
+
+    function stop()
+    {
+      clearInterval(timeIntervel);
+      ctx.clearRect(0,0,800,600);
+      timeIntervel=null;
+      X=400;Y=300;
+      speedX=2;
+      speedY=2;
+    }
+
+    function update()
+    {
+      ctx.clearRect(0,0,800,600);
+      X = X + speedX ;
+      Y = Y + speedY ;
+      if(X>=770){ speedX=-2 ;}
+      if(Y>=595){speedY=-2 ;}
+      if(X<0){ speedX=2 ;}
+      if(Y<0){speedY=2 ;}
+      ctx.fillText(A,X,Y)
+    }
+</script>
+</body>
+</html>

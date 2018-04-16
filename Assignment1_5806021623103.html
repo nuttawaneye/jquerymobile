@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Assignment1-1 : 5806021623103</title>
+    <style>
+        body{
+            font-family: "Tahoma";
+            font-size: 16px;
+            text-align: center;
+        }
+        canvas {
+            margin-left: auto;
+            margin-right: auto;
+            display: block; 
+        }
+    </style>
+
+</head>
+<body>
+    <h2>Assignment #1 :Create Line by random</h2>
+    <canvas id="myCanvas" width="800" height="400" style="border:1px solid" ></canvas><br/>
+
+    <h3>Number Line : <input id="draw">
+           <button onClick="line()">OK</button>
+           <button onClick="del()">Clear</button></h3>
+
+    <script type="text/javascript">
+        var ctx = document.getElementById("myCanvas").getContext("2d");
+        ctx.clearRect(0,0,800,400);
+        
+    function del(){
+       ctx.clearRect(0,0,800,400);
+       ctx.beginPath();
+    }
+
+    function line(){
+        var x,y,x1,y1;
+        var r=0;
+        r = document.getElementById("draw").value;
+        del();
+        if(r!=0){
+            for(i=0; i<r; i++){
+                x = Math.random()*800;
+                y = Math.random()*400;
+                x1 = Math.random()*800;
+                y1 = Math.random()*400;
+                ctx.moveTo(x1,y1);
+                ctx.lineTo(x,y);
+                ctx.stroke();
+                ctx.strokeStyle = "#0000FF";
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Assignment#3</title>
+    <style>
+    body {
+    text-align: center;
+    font-size: 16px;
+    }
+    </style>
+  </head>
+  <body>
+    <h3>Assignment #3-1 : Show Letter by Random</h3>
+    <canvas id="mycanvas" width="1000" height="600" style="border :1px solid"></canvas></br>
+    Press key A-Z, spacebar for clearscreen
+    <script>
+    var ctx = document.getElementById("mycanvas").getContext("2d");
+    var fps = 20;
+    var timeloop = null;
+    var x,y;
+    ctx.clearRect(0,0,1000,600);
+    ctx.fillStyle = "rgb(100,0,100)";
+    ctx.font = "30px Tahoma";
+    document.addEventListener("keyup",keyup,false);
+
+    function InitPosition(){
+      x = Math.random()*950;
+      y = Math.random()*550;
+    }
+
+    function keyup(e){
+      var key = e.keyCode;
+      if(key==65 || key==97){
+        //ctx.clearRect(0,0,1000,600);
+        InitPosition();
+        ctx.fillStyle = "rgb(255,0,255)";
+        ctx.fillText("A",x,y);
+      }
+      else if (key == 66 || key==98) {
+        //ctx.clearRect(0,0,1000,600);
+        InitPosition();
+        ctx.fillStyle = "rgb(255,0,255)";
+        ctx.fillText("B",x,y);
+      }
+      else if (key == 67 || key==99) {
+        //ctx.clearRect(0,0,1000,600);
+        InitPosition();
+        ctx.fillStyle = "rgb(255,0,255)";
+        ctx.fillText("C",x,y);
+      }
+      else if (key == 68 || key==100) {
+        //ctx.clearRect(0,0,1000,600);
+        InitPosition();
+        ctx.fillStyle = "rgb(255,0,255)";
+        ctx.fillText("D",x,y);
+      }
+      else if (key == 69 || key==101) {
+        //ctx.clearRect(0,0,100e0,600);
+        InitPosition();
+        ctx.fillStyle = "rgb(255,0,255)";
+        ctx.fillText("E",x,y);
+      }
+      else if (key == 70 || key==102) {
+        //ctx.clearRect(0,0,100e0,600);
+        InitPosition();
+        ctx.fillStyle = "rgb(255,0,255)";
+        ctx.fillText("F",x,y);
+      }
+      else if (key == 71 || key==103) {
+        //ctx.clearRect(0,0,100e0,600);
+        InitPosition();
+        ctx.fillStyle = "rgb(255,0,255)";
+        ctx.fillText("G",x,y);
+      }
+      else if (key == 72 || key==104) {
+        //ctx.clearRect(0,0,100e0,600);
+        InitPosition();
+        ctx.fillStyle = "rgb(255,0,255)";
+        ctx.fillText("H",x,y);
+      }
+      else if (key == 73 || key==103) {
+        //ctx.clearRect(0,0,100e0,600);
+        InitPosition();
+        ctx.fillStyle = "rgb(255,0,255)";
+        ctx.fillText("I",x,y);
+      }
+      else if (key == 74 || key==104) {
+        //ctx.clearRect(0,0,100e0,600);
+        InitPosition();
+        ctx.fillStyle = "rgb(255,0,255)";
+        ctx.fillText("J",x,y);
+      }
+      else if (key == 75 || key==102) {
+        //ctx.clearRect(0,0,100e0,600);
+        InitPosition();
+        ctx.fillStyle = "rgb(255,0,255)";
+        ctx.fillText("K",x,y);
+      }
+      else if (key == 76 || key==103) {
+        //ctx.clearRect(0,0,100e0,600);
+        InitPosition();
+        ctx.fillStyle = "rgb(255,0,255)";
+        ctx.fillText("L",x,y);
+      }
+      else if (key == 77 || key==104) {
+        //ctx.clearRect(0,0,100e0,600);
+        InitPosition();
+        ctx.fillStyle = "rgb(255,0,255)";
+        ctx.fillText("M",x,y);
+      }
+      else if (key == 78 || key==105) {
+        //ctx.clearRect(0,0,100e0,600);
+        InitPosition();
+        ctx.fillStyle = "rgb(255,0,255)";
+        ctx.fillText("N",x,y);
+      }
+      else if (key == 79 || key==106) {
+        //ctx.clearRect(0,0,100e0,600);
+        InitPosition();
+        ctx.fillStyle = "rgb(255,0,255)";
+        ctx.fillText("O",x,y);
+      }
+      else if (key == 80 || key==107) {
+        //ctx.clearRect(0,0,100e0,600);
+        InitPosition();
+        ctx.fillStyle = "rgb(255,0,255)";
+        ctx.fillText("P",x,y);
+      }
+      else if (key == 81 || key==108) {
+        //ctx.clearRect(0,0,100e0,600);
+        InitPosition();
+        ctx.fillStyle = "rgb(255,0,255)";
+        ctx.fillText("Q",x,y);
+      }
+      else if (key == 82 || key==109) {
+        //ctx.clearRect(0,0,100e0,600);
+        InitPosition();
+        ctx.fillStyle = "rgb(255,0,255)";
+        ctx.fillText("R",x,y);
+      }
+      else if (key == 83 || key==110) {
+        //ctx.clearRect(0,0,100e0,600);
+        InitPosition();
+        ctx.fillStyle = "rgb(255,0,255)";
+        ctx.fillText("S",x,y);
+      }
+      else if (key == 84 || key==111) {
+        //ctx.clearRect(0,0,100e0,600);
+        InitPosition();
+        ctx.fillStyle = "rgb(255,0,255)";
+        ctx.fillText("T",x,y);
+      }
+      else if (key == 85 || key==112) {
+        //ctx.clearRect(0,0,100e0,600);
+        InitPosition();
+        ctx.fillStyle = "rgb(255,0,255)";
+        ctx.fillText("U",x,y);
+      }
+      else if (key == 86 || key==113) {
+        //ctx.clearRect(0,0,100e0,600);
+        InitPosition();
+        ctx.fillStyle = "rgb(255,0,255)";
+        ctx.fillText("V",x,y);
+      }
+      else if (key == 87 || key==114) {
+        //ctx.clearRect(0,0,100e0,600);
+        InitPosition();
+        ctx.fillStyle = "rgb(255,0,255)";
+        ctx.fillText("W",x,y);
+      }
+      else if (key == 88 || key==115) {
+        //ctx.clearRect(0,0,100e0,600);
+        InitPosition();
+        ctx.fillStyle = "rgb(255,0,255)";
+        ctx.fillText("X",x,y);
+      }
+      else if (key == 89 || key==116) {
+        //ctx.clearRect(0,0,100e0,600);
+        InitPosition();
+        ctx.fillStyle = "rgb(255,0,255)";
+        ctx.fillText("Y",x,y);
+      }
+      else if (key == 90 || key==117) {
+        //ctx.clearRect(0,0,100e0,600);
+        InitPosition();
+        ctx.fillStyle = "rgb(255,0,255)";
+        ctx.fillText("Z",x,y);
+      }
+      else if (key==32) {
+        ctx.clearRect(0,0,1000,600);
+      }
+    }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+    body {
+    text-align: center;
+    font-size: 16px;
+    }
+    </style>
+  </head>
+  <body>
+    <h3>Assignment #3-2 : Move Box</h3>
+    <canvas id="mycanvas" width="800" height="600" style="border :1px solid"></canvas></br>
+    <script>
+    var ctx = document.getElementById("mycanvas").getContext("2d");
+    var timeIntervel=null;
+    var color = ["red","green","blue","yellow","magenta"];
+    var count=0;
+    var x;
+    var y;
+    var speedX=2;
+    var speedY=2;
+    var fps=50;
+    ctx.clearRect(0,0,800,600);
+    ctx.fillStyle = "rgb(50,50,50)";
+    ctx.font = "30px Tahoma";
+    ctx.fillText("Press Spacebar Key to Animation Box and Q Key to Stop",30,300);
+    document.addEventListener("keyup",checkKeyUp,false);
+
+    function InitPosition(){
+      x = Math.random()*950;
+      y = Math.random()*550;
+    }
+
+    function checkKeyUp(e){
+      var key = e.keyCode;
+      if (key == 32) {
+        drawrect();
+      }
+      else if (key == 81||key == 108) {
+        ctx.fillStyle = "rgb(50,50,50)";
+        ctx.font = "30px Tahoma";
+        ctx.fillText("Press Spacebar Key to Animation Box and Q Key to Stop",30,300);
+      }
+    }
+
+    function drawrect(){
+      ctx.clearRect(0,0,800,600);
+      for (var i = 0; i < 5; i++) {
+        var x,y,x1,y1;
+        InitPosition();
+        x = Math.random()*800;
+        y = Math.random()*600;
+        x1 = Math.random()*800;
+        y1 = Math.random()*600;
+        ctx.fillStyle = color[count];
+        ctx.fillRect(x,y,50,50);
+        count++;
+        if (count>4) count=0;
+      }
+    }
+    </script>
+  </body>
+</html>

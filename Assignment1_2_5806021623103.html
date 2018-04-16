@@ -1,0 +1,95 @@
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Assignment1-2 : 580601623103</title>
+    <style>
+        body{
+            font-family: "Tahoma";
+            font-size: 16px;
+            text-align: center;
+        }
+        canvas {
+            margin-left: auto;
+            margin-right: auto;
+            display: block; 
+        }
+    </style>
+    </head>
+    <body>
+        <h2>Assignment #1-2 : Create Shape Primitive By random</h2>
+        <canvas id="myCanvas" width="800" height="400" style="border:1px solid"></canvas><br/>
+        <h3>
+            Select Shape :
+            <select id="sh" name="ch">
+                <option value="0">Line</option>
+                <option value="1">Rectangle</option>
+                <option value="2">Circle</option>
+            </select>
+            <button onClick="sel()">OK</button>
+            <button onClick="del()">Clear</button>
+        </h3>
+        <script type="text/javascript">
+        var ctx = document.getElementById("myCanvas").getContext("2d");
+        ctx.clearRect(0,0,800,400);
+
+        function del(){
+            ctx.clearRect(0,0,800,400);
+            ctx.beginPath();
+        }
+
+        function sel(){
+            var shape = document.getElementById("sh");
+            if(shape.value == "0"){
+                drawline();
+            }
+            else if(shape.value == "1"){
+                drawrect();
+            }
+            else if(shape.value == "2"){
+                drawcircle();
+            }
+        }
+
+        function drawline(){
+            var x,y,x1,y1;
+            x = Math.random()*800;
+            y = Math.random()*400;
+            x1 = Math.random()*800;
+            y1 = Math.random()*400;
+            ctx.moveTo(x1,y1);
+            ctx.lineTo(x,y);
+            ctx.stroke();
+            ctx.strokeStyle = "#0000FF";
+        }
+
+        function drawrect(){
+            var x,y,x1,y1;
+            x = Math.random()*600;
+            y = Math.random()*300;
+            x1 = Math.random()*300;
+            y1 = Math.random()*100;
+            ctx.fillStyle = "#006600";
+            ctx.fillRect(x,y,x1,y1);
+            ctx.strokeRect(x,y,x1,y1);
+            ctx.strokeStyle = "#006600";
+
+        }
+
+        function drawcircle(){
+            var x,y,r;
+            x = Math.random()*700;
+            y = Math.random()*400;
+            r = Math.random()*100;
+
+            ctx.beginPath();
+            ctx.strokeStyle = "red";
+            ctx.fillStyle = "red";
+            ctx.arc (x,y,r,0,2*Math.PI,true);
+            ctx.stroke();
+            ctx.fill();
+        }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Assignment #2</title>
+        <style>
+        body {
+        text-align: center;
+        font-size: 16px;
+        }
+        </style>
+  </head>
+      <body>
+      <h3>Assignment #2-1 :Slide Show</h3>
+      <canvas id="mycanvas" width="800" height="600" style="border :1px solid"></canvas>
+      <br><br>
+      Time delay : <input id="timede" value="0">
+      millisecond :<button onclick="slide()">Show Slide</button>
+        <script type="text/javascript">
+          var ctx = document.getElementById("mycanvas").getContext("2d");
+          var img = [];
+          var A = 0;
+          var dele=0;
+          var picname =["bg1.gif","bg2.gif","bg3.gif","bg4.gif","bg5.gif"];
+          var timeIntervel;
+            for(var n=0;n<5;n++)
+            {
+            img[n] = new Image();
+            img[n].src = picname[n];
+            }
+
+            function slide()
+            {
+            clearInterval(timeIntervel);
+            dele = parseInt(document.getElementById("timede").value);
+            if(dele == 0){
+            ctx.clearRect(0,0,800,600);
+            }
+              else{timeIntervel = setInterval( update ,dele);
+              }
+            }
+
+            function update()
+            {
+            ctx.clearRect(0,0,800,600);
+            ctx.drawImage(img[A],0,0);
+            A += 1;
+              if (A==5){A=1
+              };
+            }
+        </script>
+      </body>
+</html>
